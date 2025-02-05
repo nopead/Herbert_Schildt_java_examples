@@ -4,9 +4,9 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.Set;
 
-class TreeMapDemo{
+class TreeMapDemo2{
 	public static void main(String[] args){
-		TreeMap<String, Double> tm = new TreeMap<>();
+		TreeMap<String, Double> tm = new TreeMap<String, Double>(new TComp());
 		
 		tm.put("Джон Доу", Double.valueOf("3434.34"));
 		tm.put("Том Смит", Double.valueOf("123.22"));
@@ -16,13 +16,12 @@ class TreeMapDemo{
 		
 		Set<Map.Entry<String, Double>> set = tm.entrySet();
 		
-		System.out.println("K -- V");
 		for (Map.Entry<String, Double> map_el: set){
-			System.out.println(map_el.getKey() + " -- " + map_el.getValue());
+			System.out.println(map_el.getKey() + " " + map_el.getValue());
 		}
 		
 		double balance = tm.get("Джон Доу");
 		tm.put("Джон Доу", balance + 1000);
-		System.out.println("Ноывй остаток на счете Джона Доу: " + tm.get("Джон Доу"));
+		System.out.println("Баланс Джона Доу: " + tm.get("Джон Доу"));
 	}
 }
