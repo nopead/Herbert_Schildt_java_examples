@@ -1,0 +1,9 @@
+/*
+	Это простая программа на Java.
+	Многострочный комментарий
+*/
+class Example{
+	public static void main(String args[]){
+		System.out.println("Простая программа на Java.");
+	}
+}
