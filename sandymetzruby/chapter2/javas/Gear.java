@@ -18,6 +18,19 @@ class Gear{
 		return cog;
 	}
 	
+	
+	public int getCog(int unanticipated_adjustment_factor){
+		return cog * unanticipated_adjustment_factor;
+	}
+	
+	boolean foo(){
+		return true;
+	}
+	
+	public int getCog(int bar_adjustment, int baz_adjustment){
+		return cog * (foo() ? bar_adjustment : baz_adjustment);
+	}
+	
 	public double ratio(){
 		return(chairing * 1.0 / cog);
 	}
