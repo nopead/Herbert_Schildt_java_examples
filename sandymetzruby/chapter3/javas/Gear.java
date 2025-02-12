@@ -6,29 +6,12 @@ import java.util.HashMap;
 class Gear{
 	private int chairing;
 	private int cog;
-	private double rim;
-	private double tire;
 	private Wheel wheel;
 	
-	Gear(int chairing, int cog){
-		this.chairing = chairing;
-		this.cog = cog;
-	}
-	
-	Gear(int chairing, int cog, double rim, double tire){
-		this(chairing, cog);
-		this.rim = rim;
-		this.tire = tire;
-		this.wheel = new Wheel(rim, tire);
-	}
-	
-	Gear(int chairing, int cog, Wheel wheel){
-		this(chairing, cog);
-		this.wheel = wheel;
-	}
-	
-	void setWheel(){
-		this.wheel = new Wheel(this.rim, this.tire);
+	Gear(HashMap<String, Object> args){
+		this.chairing = (int)args.get("chairing");
+		this.cog = (int)args.get("cog");
+		this.wheel = (Wheel)args.get("wheel");
 	}
 	
 	Wheel getWheel(){
