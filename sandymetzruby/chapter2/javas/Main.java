@@ -1,14 +1,15 @@
 package sandymetzruby.chapter2.classes;
 
 import sandymetzruby.chapter2.classes.Gear;
+import sandymetzruby.chapter2.classes.Wheel;
 import sandymetzruby.chapter2.classes.ObscuringReferences;
 import sandymetzruby.chapter2.classes.RevealingReferences;
 import java.util.ArrayList;
 
 class Main{
-	public static void main(String[] args){
-		Gear firstGear = new Gear(52, 11, 26, 1.5);
-		Gear secondGear = new Gear(30, 27, 24, 1.25);
+	public static void main(String[] args){ 
+		Gear firstGear = new Gear(52, 11, new Wheel(26, 1.5));
+		Gear secondGear = new Gear(30, 27, new Wheel(24, 1.25));
 		
 		System.out.print("firstGear gearInches(): ");
 		System.out.print(firstGear.gearInches() + "\n");

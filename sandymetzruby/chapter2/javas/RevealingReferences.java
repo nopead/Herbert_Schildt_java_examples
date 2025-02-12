@@ -7,13 +7,13 @@ class RevealingReferences{
 	ArrayList<Wheel> wheels;
 	
 	public class Wheel{
-		int[] rimTire;
+		double[] rimTire;
 		
-		Wheel(int rim, int tire) {
-			this.rimTire = new int[] {rim, tire};
+		Wheel(double rim, double tire) {
+			this.rimTire = new double[] {rim, tire};
 		}
 		
-		int[] getRimTire() {
+		double[] getRimTire() {
 			return this.rimTire;
 		}
 	}

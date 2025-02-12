@@ -1,22 +1,17 @@
 package sandymetzruby.chapter2.classes;
 
+import sandymetzruby.chapter2.classes.Wheel;
+
 class Gear{
 	
 	private int chairing;
 	private int cog;
-	private double rim;
-	private double tire;
+	private Wheel wheel;
 	
-	Gear(int chairing, int cog){
+	Gear(int chairing, int cog, Wheel wheel){
 		this.chairing = chairing;
 		this.cog = cog;
-	}
-	
-	Gear(int chairing, int cog, double rim, double tire){
-		this.chairing = chairing;
-		this.cog = cog;
-		this.rim = rim;
-		this.tire = tire;
+		this.wheel = wheel;
 	}
 	
 	public int getChairing(){
@@ -39,23 +34,11 @@ class Gear{
 		return cog * (foo() ? bar_adjustment : baz_adjustment);
 	}
 	
-	public double getRim(){
-		return rim;
-	}
-	
-	public double getTire(){
-		return tire;
-	}
-	
 	public double ratio(){
 		return(chairing * 1.0 / cog);
 	}
 	
-	public double diameter(){
-		return rim + (tire * 2);
-	}
-	
 	public double gearInches(){
-		return ratio() * diameter();
+		return ratio() * wheel.diameter();
 	}	
 }
