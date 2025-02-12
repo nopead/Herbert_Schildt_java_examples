@@ -8,7 +8,14 @@ class Gear{
 	private int cog;
 	private Wheel wheel;
 	
+	Gear(){
+		this.chairing = 40;
+		this.cog = 18;
+		this.wheel = null;
+	}
+	
 	Gear(HashMap<String, Object> args){
+		this();
 		this.chairing = (int)args.get("chairing");
 		this.cog = (int)args.get("cog");
 		this.wheel = (Wheel)args.get("wheel");
