@@ -32,8 +32,12 @@ class RevealingReferences{
 	
 	void diameters(){
 		wheels.forEach((e) -> {
-			System.out.println("[" + e.getRimTire()[0] + ", " + e.getRimTire()[0] + "]");
+				diameter(e);
 			}
 		);
+	}
+	
+	void diameter(Wheel wheel){
+		System.out.println("[" + wheel.getRimTire()[0] + ", " + wheel.getRimTire()[0] + "]");
 	}
 }
