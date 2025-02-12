@@ -1,18 +1,39 @@
-package sandymetzruby.chapter2.classes;
+package sandymetzruby.chapter3.classes;
 
-import sandymetzruby.chapter2.classes.Wheel;
+import sandymetzruby.chapter3.classes.Wheel;
+import java.util.HashMap;
 
 class Gear{
-	
 	private int chairing;
 	private int cog;
+	private double rim;
+	private double tire;
 	private Wheel wheel;
+	
+	Gear(int chairing, int cog){
+		this.chairing = chairing;
+		this.cog = cog;
+	}
 	
 	Gear(int chairing, int cog, double rim, double tire){
 		this(chairing, cog);
+		this.rim = rim;
+		this.tire = tire;
 		this.wheel = new Wheel(rim, tire);
 	}
 	
+	Gear(int chairing, int cog, Wheel wheel){
+		this(chairing, cog);
+		this.wheel = wheel;
+	}
+	
+	void setWheel(){
+		this.wheel = new Wheel(this.rim, this.tire);
+	}
+	
+	Wheel getWheel(){
+		return this.wheel;
+	}
 	
 	public int getChairing(){
 		return chairing;
@@ -42,7 +63,15 @@ class Gear{
 		return this.wheel.diameter();
 	}
 	
-	public double gearInches(){
+	public double gearInchesByVariable(){
 		return ratio() * wheel.diameter();
 	}	
+	
+	public double gearInchesByMethod(){
+		return ratio() * getWheel().diameter();
+	}
+	
+	public double gearInchesByMethodCallingWheelMethod(){
+		return ratio() * getWheelDiameter();
+	}
 }
