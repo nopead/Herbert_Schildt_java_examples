@@ -9,10 +9,13 @@ class Gear{
 	private Wheel wheel;
 	
 	Gear(HashMap<String, Object> args){
-		
-		this.chairing = args.containsKey("chairing") ? (int)args.get("chairing") : 40;
-		this.cog = args.containsKey("cog") ? (int)args.get("cog") : 18;
+		defaults(args);
 		this.wheel = (Wheel)args.get("wheel");
+	}
+	
+	void defaults(HashMap<String, Object> args){
+		this.chairing = args.containsKey("chairing") ? args.get("chairing") : 40;
+		this.cog = args.containsKey("cog") ? args.get("cog") : 40;
 	}
 	
 	Wheel getWheel(){
