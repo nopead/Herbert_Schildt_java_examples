@@ -12,9 +12,9 @@ class Main{
 		Gear secondGear = new Gear(30, 27, new Wheel(24, 1.25));
 		
 		System.out.print("firstGear gearInches(): ");
-		System.out.print(firstGear.gearInches() + "\n");
+		System.out.print(firstGear.gearInchesByVariable() + "\n");
 		System.out.print("secondGear gearInches(): ");
-		System.out.print(secondGear.gearInches() + "\n");
+		System.out.print(secondGear.gearInchesByVariable() + "\n");
 		
 		/*System.out.print("first_gear gear_inches: ");
 		System.out.print(first_gear.gear_inches() + "\n");

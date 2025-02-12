@@ -6,12 +6,33 @@ class Gear{
 	
 	private int chairing;
 	private int cog;
+	private double rim;
+	private double tire;
 	private Wheel wheel;
 	
-	Gear(int chairing, int cog, Wheel wheel){
+	Gear(int chairing, int cog){
 		this.chairing = chairing;
 		this.cog = cog;
+	}
+	
+	Gear(int chairing, int cog, double rim, double tire){
+		this(chairing, cog);
+		this.rim = rim;
+		this.tire = tire;
+		this.wheel = new Wheel(rim, tire);
+	}
+	
+	Gear(int chairing, int cog, Wheel wheel){
+		this(chairing, cog);
 		this.wheel = wheel;
+	}
+	
+	void setWheel(){
+		this.wheel = new Wheel(this.rim, this.tire);
+	}
+	
+	Wheel getWheel(){
+		return this.wheel;
 	}
 	
 	public int getChairing(){
@@ -35,10 +56,22 @@ class Gear{
 	}
 	
 	public double ratio(){
-		return(chairing * 1.0 / cog);
+		return (chairing * 1.0 / cog);
 	}
 	
-	public double gearInches(){
+	double getWheelDiameter(){
+		return this.wheel.diameter();
+	}
+	
+	public double gearInchesByVariable(){
 		return ratio() * wheel.diameter();
 	}	
+	
+	public double gearInchesByMethod(){
+		return ratio() * getWheel().diameter();
+	}
+	
+	public double gearInchesByMethodCallingWheelMethod(){
+		return ratio() * getWheelDiameter();
+	}
 }
