@@ -1,6 +1,10 @@
 package sandymetzruby.chapter3.classes;
 
-class Wheel{
+interface IDiameterable{
+	public double diameter();
+}
+
+class Wheel implements IDiameterable{
 	private double rim;
 	private double tire;
 	
@@ -21,7 +25,7 @@ class Wheel{
 		return new double[] {rim, tire};
 	}
 	
-	double diameter(){
+	public double diameter(){
 		return (rim + (tire * 2));
 	}
 	

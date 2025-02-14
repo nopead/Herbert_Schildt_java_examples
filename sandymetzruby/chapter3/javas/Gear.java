@@ -1,6 +1,7 @@
 package sandymetzruby.chapter3.classes;
 
 import sandymetzruby.chapter3.classes.Wheel;
+import sandymetzruby.chapter3.classes.IDiameterable;
 import java.util.HashMap;
 
 class GearWrapper{
@@ -12,15 +13,15 @@ class GearWrapper{
 class Gear{
 	private int chairing;
 	private int cog;
-	private Wheel wheel;
+	private IDiameterable wheel;
 	
-	Gear(int chairing, int cog, Wheel wheel){
+	Gear(int chairing, int cog, IDiameterable wheel){
 		this.chairing = chairing;
 		this.cog = cog;
 		this.wheel = wheel;
 	}
 	
-	Wheel getWheel(){
+	IDiameterable getWheel(){
 		return this.wheel;
 	}
 	
