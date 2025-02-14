@@ -3,19 +3,21 @@ package sandymetzruby.chapter3.classes;
 import sandymetzruby.chapter3.classes.Wheel;
 import java.util.HashMap;
 
+class GearWrapper{
+	public static Gear createGear(HashMap<String, Object> args){
+		return new Gear((int)args.get("chairing"), (int)args.get("cog"), (Wheel)args.get("wheel"));
+	}
+}
+
 class Gear{
 	private int chairing;
 	private int cog;
 	private Wheel wheel;
 	
-	Gear(HashMap<String, Object> args){
-		defaults(args);
-		this.wheel = (Wheel)args.get("wheel");
-	}
-	
-	void defaults(HashMap<String, Object> args){
-		this.chairing = args.containsKey("chairing") ? args.get("chairing") : 40;
-		this.cog = args.containsKey("cog") ? args.get("cog") : 40;
+	Gear(int chairing, int cog, Wheel wheel){
+		this.chairing = chairing;
+		this.cog = cog;
+		this.wheel = wheel;
 	}
 	
 	Wheel getWheel(){
